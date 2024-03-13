@@ -13,6 +13,7 @@ module.exports = {
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:jsx-a11y/recommended',
+    'plugin:prettier/recommended',
     'next',
     'next/core-web-vitals',
   ],
@@ -21,7 +22,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   rules: {
-    'prettier/prettier': 'warn',
+    'prettier/prettier': 'off',
     'react/react-in-jsx-scope': 'off',
     'jsx-a11y/anchor-is-valid': [
       'error',
