@@ -34,5 +34,4 @@ const projectsData: Project[] = [
   },
 ]
 
-//img dimensions: 
 export default projectsData

@@ -1,20 +1,5 @@
-import Link from '@/components/Link'
-import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
-import { formatDate } from 'pliny/utils/formatDate'
-import NewsletterForm from 'pliny/ui/NewsletterForm'
-import React, { useState, useEffect } from 'react'
-
-const MAX_DISPLAY = 5
-/**
-<span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-pink-500 relative inline-block">
-<span class="relative text-white">annoyed</span>
-</span>
-*/
-
-export default function Home({ posts }) {
+export default function Home({ }) {
   return (
-    
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pb-8 pt-6 md:space-y-5">
