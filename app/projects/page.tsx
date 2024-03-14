@@ -12,6 +12,11 @@ export default function Projects() {
           <h1 className='text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14'>
             Projects
           </h1>
+<<<<<<< HEAD
+=======
+          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+          </p>
+>>>>>>> 71536b7584e8f5c9d06791fea3e657dfcc02eb68
         </div>
         <div className='container py-12'>
           <div className='-m-4 flex flex-wrap'>
