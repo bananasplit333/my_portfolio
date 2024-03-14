@@ -11,7 +11,7 @@ const projectsData: Project[] = [
     description: `Simple UI to ask about weather conditions anywhere in the world. Utilizes OPENAI's API and built on 
     Django / Flask.`,
     imgSrc: '/static/images/weatherapp.png',
-    href: '/https://github.com/bananasplit333/weatherapp',
+    href: 'https://github.com/bananasplit333/weatherapp',
   },
   {
     title: 'Hot Dog or Not Hot Dog',
@@ -30,7 +30,7 @@ const projectsData: Project[] = [
     title: 'Fuyu',
     description: 'Ecommerce site selling various goods',
     imgSrc: '/static/images/fuyu.png',
-    href:'/https://www.fuyu.ca'
+    href:'https://www.fuyu.ca'
   },
 ]
 
