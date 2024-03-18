@@ -3,6 +3,8 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
+import { RoughNotation } from 'react-rough-notation';
+import { gray, green } from 'tailwindcss/colors'
 
 const MAX_DISPLAY = 5
 
@@ -22,7 +24,30 @@ export default function Home() {
             Software Engineer
           </div> 
           <div className="animate-slidein opacity-0 text-xl">
-          <p>Learn more <a href="/about" className="hover:bg-sky-700"> about me </a> or <a className="hover:bg-sky-700" href="/contact">contact me</a>
+          <p>Learn more {' '}
+            <span>
+              <RoughNotation
+                  show
+                  type='underline'
+                  strokeWidth={2}
+                  animationDelay={750}
+                  animationDuration={1700}
+              >
+                <a href="/about" className="hover:bg-sky-700">
+                   about me 
+                </a>
+              </RoughNotation>
+            </span> or {' '}
+            <RoughNotation
+                  show
+                  type='circle'
+                  strokeWidth={2}
+                  animationDelay={2450}
+                  animationDuration={2000}
+              >
+                <a className="hover:bg-sky-700" href="/contact">contact me</a>
+            </RoughNotation>
+            
           </p>
           </div>
         </div>
