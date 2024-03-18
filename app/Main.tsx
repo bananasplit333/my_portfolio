@@ -37,7 +37,7 @@ export default function Home() {
                    about me 
                 </a>
               </RoughNotation>
-            </span> or {' '}
+            </span> or {'    '}
             <RoughNotation
                   show
                   type='circle'
