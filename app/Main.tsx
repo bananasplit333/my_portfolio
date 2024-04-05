@@ -29,6 +29,7 @@ export default function Home() {
                  <RoughNotation
                    show
                    type='highlight'
+                   color='yellow'
                    padding={[0, 2]}
                    iterations={1}
                    animationDelay={750}
@@ -42,6 +43,7 @@ export default function Home() {
             <RoughNotation
                    show
                    type='highlight'
+                   color='yellow'
                    padding={[0, 2]}
                    iterations={1}
                    animationDelay={1720}
