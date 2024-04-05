@@ -20,18 +20,19 @@ export default function Home() {
           </h1>
           </div>
           <div className="border-b border-white w-120px"></div>
-          <div className="animate-slidein opacity-0 text-4xl">
+          <div className="animate-slidein opacity-0 text-2xl">
             Software Engineer
           </div> 
-          <div className="animate-slidein opacity-0 text-xl">
+          <div className="animate-slidein opacity-0 text-l">
           <p>Learn more {' '}
             <span>
-              <RoughNotation
-                  show
-                  type='underline'
-                  strokeWidth={2}
-                  animationDelay={750}
-                  animationDuration={1700}
+                 <RoughNotation
+                   show
+                   type='highlight'
+                   padding={[0, 2]}
+                   iterations={1}
+                   animationDelay={750}
+                   animationDuration={1700}
               >
                 <a href="/about" className="hover:bg-sky-700">
                    about me 
@@ -39,11 +40,12 @@ export default function Home() {
               </RoughNotation>
             </span> or {'    '}
             <RoughNotation
-                  show
-                  type='circle'
-                  strokeWidth={2}
-                  animationDelay={2450}
-                  animationDuration={2000}
+                   show
+                   type='highlight'
+                   padding={[0, 2]}
+                   iterations={1}
+                   animationDelay={1720}
+                   animationDuration={2720}
               >
                 <a className="hover:bg-sky-700" href="/contact">contact me</a>
             </RoughNotation>
