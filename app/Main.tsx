@@ -29,8 +29,8 @@ export default function Home() {
                  <RoughNotation
                    show
                    type='highlight'
-                   color='yellow'
-                   padding={[0, 2]}
+                   color='rgba(255, 255, 0, 0.5)'
+                   padding={[2, 4]}
                    iterations={1}
                    animationDelay={750}
                    animationDuration={1700}
@@ -43,8 +43,8 @@ export default function Home() {
             <RoughNotation
                    show
                    type='highlight'
-                   color='yellow'
-                   padding={[0, 2]}
+                   color='rgba(255, 255, 0, 0.5)'
+                   padding={[2, 4]}
                    iterations={1}
                    animationDelay={1720}
                    animationDuration={2720}
