@@ -24,18 +24,20 @@ export default function Home() {
             Software Engineer
           </div> 
           <div className="animate-slidein opacity-0 text-l">
-          <p>Learn more {' '}
+          <p>Learn more {'      '}
             <span>
                  <RoughNotation
                    show
                    type='highlight'
-                   color='rgba(255, 255, 0, 0.5)'
-                   padding={[2, 4]}
-                   iterations={1}
-                   animationDelay={750}
-                   animationDuration={1700}
+                   color='rgba(147,197,253)'
+                   padding={[2, 4, 5, 5]}
+                   iterations={2}
+                   strokeWidth={2}
+                   animationDelay={800}
+                   animationDuration={1500}
+                   brackets='top'
               >
-                <a href="/about" className="hover:bg-sky-700">
+                <a href="/about" className="hover:text-indigo-700">
                    about me 
                 </a>
               </RoughNotation>
@@ -43,13 +45,13 @@ export default function Home() {
             <RoughNotation
                    show
                    type='highlight'
-                   color='rgba(255, 255, 0, 0.5)'
-                   padding={[2, 4]}
-                   iterations={1}
-                   animationDelay={1720}
-                   animationDuration={2720}
+                   color='rgba(180,165,174)'
+                   padding={[2, 4, 10, 6]}
+                   iterations={2}
+                   animationDelay={820}
+                   animationDuration={1620}
               >
-                <a className="hover:bg-sky-700" href="/contact">contact me</a>
+                <a className="hover:text-indigo-700" href="/contact">contact me</a>
             </RoughNotation>
             
           </p>
