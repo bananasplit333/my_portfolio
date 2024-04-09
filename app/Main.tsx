@@ -19,7 +19,6 @@ export default function Home() {
             Hello, I'm Jae.
           </h1>
           </div>
-          <div className="border-b border-white w-120px"></div>
           <div className="animate-slidein opacity-0 text-2xl">
             Software Engineer
           </div> 
