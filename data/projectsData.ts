@@ -32,7 +32,7 @@ const projectsData: Project[] = [
   {
     title: 'Image2Excel',
     description: 'Utilizes OCR to parse images of receipts, and return a expense report in excel.',
-    href:'https://drag-and-drop-nextjs-opal.vercel.app/'
+    href:'https://receipt2excel.jaehyon.ca/'
   },
 ]
 
