@@ -29,6 +29,11 @@ const projectsData: Project[] = [
     description: 'Ecommerce site selling various goods. Built on NextJS, utilizes Shopify checkout',
     href:'https://www.pouch.fun'
   },
+  {
+    title: 'Image2Excel',
+    description: 'Utilizes OCR to parse images of receipts, and return a expense report in excel.',
+    href:'https://drag-and-drop-nextjs-opal.vercel.app/'
+  },
 ]
 
 export default projectsData
