@@ -30,8 +30,13 @@ const projectsData: Project[] = [
   },
   {
     title: 'Image2Excel',
-    description: 'Utilizes OCR to extract key information from receipt images, and return a expense report in excel.',
+    description: 'Utilizes OCR to extract key information from receipt images, and return a expense report in excel. Automates the annoying task of having to input your expenses manually.',
     href:'https://receipt2excel.jaehyon.ca/'
+  },
+  {
+    title: 'Url_Shortener',
+    description: 'Just a nifty app to shorten long, cumbersome URLs',
+    href:'/projects/url_shorterer',
   },
 ]
 
