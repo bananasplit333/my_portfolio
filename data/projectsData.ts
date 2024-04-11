@@ -8,20 +8,19 @@ interface Project {
 const projectsData: Project[] = [
   {
     title: 'WeatherApp',
-    description: `Simple UI to ask about weather conditions anywhere in the world. Utilizes OPENAI's API and built on 
-    Django / Flask.`,
+    description: `Simple and intuitive web application that allows users to inquire about current weather conditions anywhere in the world. Leverages OpenAI's tool calling to provides accurate and up-to-date weather information based on user input.`,
     imgSrc: '/static/images/weatherapp.png',
     href: 'https://weather.toddie.org',
   },
   {
     title: 'Hot Dog or Not Hot Dog',
-    description: `Inspired by HBO Silicon Valley's Hot Dog application. Built on Python, uses machine learning
-    to predict whether or not the image is a hot dog or not a hot dogs.`,
+    description: `Inspired by the hilarious "Not Hotdog" app from HBO's Silicon Valley. Built on Python, uses transfer learning
+    to predict whether or not the image is a hot dog or not a hot dog.`,
     href: 'https://github.com/bananasplit333/hotdog_nothotdog/blob/main/Untitled.ipynb',
   },  
   {
     title: 'Flashcard Maker',
-    description: 'Upload any documents, receive flashcards in return to boost your exam success',
+    description: 'Upload any documents, receive flashcards in return to boost your exam success. Built using NextJS and Groq',
     href: '/https://www.google.com',
   },
   {
@@ -31,7 +30,7 @@ const projectsData: Project[] = [
   },
   {
     title: 'Image2Excel',
-    description: 'Utilizes OCR to parse images of receipts, and return a expense report in excel.',
+    description: 'Utilizes OCR to extract key information from receipt images, and return a expense report in excel.',
     href:'https://receipt2excel.jaehyon.ca/'
   },
 ]
