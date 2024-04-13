@@ -10,7 +10,7 @@ const projectsData: Project[] = [
     title: 'WeatherApp',
     description: `Simple and intuitive web application that allows users to inquire about current weather conditions anywhere in the world. Leverages OpenAI's tool calling to provides accurate and up-to-date weather information based on user input.`,
     imgSrc: '/static/images/weatherapp.png',
-    href: 'https://weather.toddie.org',
+    href: '/projects/weatherapp',
   },
   {
     title: 'Hot Dog or Not Hot Dog',
