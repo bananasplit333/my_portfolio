@@ -50,7 +50,7 @@ const WeatherApp: React.FC = () => {
       console.log('submitted');
       console.log('input value: ', inputValue);
 
-      const response = await fetch('http://127.0.0.1:5000/result', {
+      const response = await fetch('https://weather.toddie.org/result', {
         method: 'POST',
         body: inputValue,
       });
