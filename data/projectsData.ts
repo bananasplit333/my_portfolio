@@ -15,7 +15,7 @@ const projectsData: Project[] = [
   {
     title: 'RecipeParser',
     description: 'Enter a URL link and get the cooking instructions and ingredients. No more long winded stories, no more ugly clutter. Utilizes webscarping and NLP.',
-    href:'/projetcs/altfood'
+    href:'/projects/altfood'
   },
   {
     title: 'Hot Dog or Not Hot Dog',
