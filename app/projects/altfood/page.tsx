@@ -16,7 +16,7 @@ export default function Home() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch(`http://localhost:5000/parse_url?url=${encodeURIComponent(recipeUrl)}`);
+    const res = await fetch(`https://altrecipe.toddie.org/parse_url?url=${encodeURIComponent(recipeUrl)}`);
     const data = await res.json();
 
     const ingredientsArray: string[] = Object.entries(data.ingredients[0]).map(([_, ingredient]) => ingredient as string);
