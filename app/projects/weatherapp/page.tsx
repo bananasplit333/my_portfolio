@@ -30,7 +30,7 @@ const WeatherApp: React.FC = () => {
     if (chatResponseRef.current) {
       const typed = new Typed(chatResponseRef.current, {
         strings: [chatResponse],
-        typeSpeed: 20,
+        typeSpeed: 16,
         showCursor: false,
       });
 
@@ -96,6 +96,7 @@ const WeatherApp: React.FC = () => {
     <div className="flex min-h-screen items-center justify-center">
       {!hasInput ? (
         <div>
+          <div className="text-2xl flex justify-center font-bold pb-4">Weather</div>
           <div className="text-slate-950">
             <input
               type="text"
@@ -103,7 +104,7 @@ const WeatherApp: React.FC = () => {
               onChange={handleInputChange}
               onClick={gainedFocus}
               onBlur={lostFocus}
-              placeholder={showPlaceholder ? 'Please Enter a City' : ''}
+              placeholder={showPlaceholder ? 'Enter a City' : ''}
             />
           </div>
           <div className="justify-center flex-col flex mt-4">

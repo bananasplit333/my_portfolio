@@ -19,7 +19,7 @@ const UrlShortener: React.FC = () => {
     
     try {
       console.log('hi');
-      const response = await fetch('https://shorturl.toddie.org/shorten_link', {
+      const response = await fetch('http://127.0.0.1:5000/shorten_link', {
         method: 'POST',
         body: formData,
       });
