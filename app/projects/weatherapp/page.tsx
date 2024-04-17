@@ -119,7 +119,7 @@ const WeatherApp: React.FC = () => {
             <span className="h-4 w-4 rounded-full bg-gray-400"> </span>
           </span>
         </div>
-</div>
+        </div>
       ) : (
         <div className="grid grid-cols-6">
           <div className="col-span-2">
