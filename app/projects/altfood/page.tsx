@@ -29,7 +29,7 @@ const RecipeParser: React.FC = () => {
     setIsLoading(true); // Set isLoading to true before the fetch operation
   
     try {
-      const res = await fetch(`${TEST_URL}?url=${encodeURIComponent(recipeUrl)}`);
+      const res = await fetch(`${API_URL}?url=${encodeURIComponent(recipeUrl)}`);
       const data = await res.json();
   
       if (data.ingredients && data.cooking_instructions) {
