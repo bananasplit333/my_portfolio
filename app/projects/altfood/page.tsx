@@ -23,7 +23,7 @@ export default function Home() {
     e.preventDefault();
     setError(null); // Reset any previous errors
 
-    const res = await fetch(`http://127.0.0.1:5000/parse_url?url=${encodeURIComponent(recipeUrl)}`);
+    const res = await fetch(`https://altrecipe.toddie.org/parse_url?url=${encodeURIComponent(recipeUrl)}`);
     const data = await res.json();
     
     console.log(data)
