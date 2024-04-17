@@ -5,11 +5,42 @@ import React from 'react';
 interface RecipeCardProps {
   ingredients: string[];
   directions: string[];
+  name: string;
+  prepTime: string;
+  cookTime: string;
+  recipeYield: string;
 }
 
-const RecipeCard: React.FC<RecipeCardProps> = ({ ingredients, directions }) => {
+const RecipeCard: React.FC<RecipeCardProps> = ({
+  ingredients,
+  directions,
+  name,
+  prepTime,
+  cookTime,
+  recipeYield,
+}) => {
   return (
     <div className="flex flex-col bg-white rounded shadow p-6 dark:bg-zinc-800">
+      <h2 className="text-2xl font-bold mb-4">{name}</h2>
+      {(prepTime || cookTime || recipeYield) && (
+        <div className="grid grid-cols-3 gap-4 mb-6">
+          {prepTime && (
+            <div>
+              <span className="font-bold">Prep Time:</span> {prepTime}
+            </div>
+          )}
+          {cookTime && (
+            <div>
+              <span className="font-bold">Cook Time:</span> {cookTime}
+            </div>
+          )}
+          {recipeYield && (
+            <div>
+              <span className="font-bold">Yield:</span> {recipeYield}
+            </div>
+          )}
+        </div>
+      )}
       <div className="grid grid-cols-2 gap-8">
         <div>
           <h3 className="text-xl font-bold mb-4">Ingredients</h3>

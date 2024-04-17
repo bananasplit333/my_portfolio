@@ -6,28 +6,45 @@ import RecipeCard from '../../../components/RecipeCard';
 import React from 'react';
 
 interface RecipeData {
-    ingredients: string[];
-    directions: string[];
+  ingredients: string[];
+  directions: string[];
+  name: string;
+  prepTime: string;
+  cookTime: string;
+  recipeYield: string;
 }
 
 export default function Home() {
   const [recipeUrl, setRecipeUrl] = useState('');
   const [recipeData, setRecipeData] = useState<RecipeData | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await fetch(`https://altrecipe.toddie.org/parse_url?url=${encodeURIComponent(recipeUrl)}`);
+    setError(null); // Reset any previous errors
+
+    const res = await fetch(`http://127.0.0.1:5000/parse_url?url=${encodeURIComponent(recipeUrl)}`);
     const data = await res.json();
     
-    const ingredientsArray: string[] = Object.entries(data.ingredients[0]).map(([_, ingredient]) => ingredient as string);
+    console.log(data)
+    if (data.ingredients && data.cooking_instructions) {
+      const ingredientsArray= data.ingredients
+      const directionsArray = JSON.parse(data.cooking_instructions)["cooking_instructions"];
 
-    setRecipeData({
-      ingredients: ingredientsArray,
-      directions: JSON.parse(data.cooking_instructions)["cooking_instructions"],
-    });  
-    console.log("type of ingredients: ", typeof recipeData?.ingredients)
+   
+      setRecipeData({
+        ingredients: ingredientsArray,
+        directions: directionsArray,
+        name: data.name || '',
+        prepTime: data.prep_time || '',
+        cookTime: data.cook_time || '',
+        recipeYield: data.recipe_yield || '',
+      });
+    } else {
+      setError('Error: Ingredients or directions are missing.');
+    }
   };
-
+  console.log(recipeData)
   return (
     <div className="flex flex-col min-h-screen justify-center max-w-xl mx-auto p-4">
       <h1 className="text-2xl font-bold mb-4">Clear away the clutter on any recipe site.</h1>
@@ -43,7 +60,19 @@ export default function Home() {
         />
         <button type="submit" className="bg-blue-500 text-white rounded px-4 py-1">Get recipe</button>
       </form>
-      {recipeData && <RecipeCard {...recipeData} />}
+
+      {error && <p className="text-red-500 mb-4">{error}</p>}
+      
+      {recipeData && !error && (
+        <RecipeCard
+          name={recipeData.name}
+          prepTime={recipeData.prepTime}
+          cookTime={recipeData.cookTime}
+          recipeYield={recipeData.recipeYield}
+          ingredients={recipeData.ingredients}
+          directions={recipeData.directions}
+        />
+      )}
     </div>
   );
 }
