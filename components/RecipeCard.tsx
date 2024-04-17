@@ -9,7 +9,7 @@ interface RecipeCardProps {
 
 const RecipeCard: React.FC<RecipeCardProps> = ({ ingredients, directions }) => {
   return (
-    <div className="bg-white rounded shadow p-6">
+    <div className="flex flex-col bg-white rounded shadow p-6 dark:bg-zinc-800">
       <div className="grid grid-cols-2 gap-8">
         <div>
           <h3 className="text-xl font-bold mb-4">Ingredients</h3>
