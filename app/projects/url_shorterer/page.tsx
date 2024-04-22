@@ -87,7 +87,7 @@ const UrlShortener: React.FC = () => {
                   Customize your link
                 </label>
                 <div className="flex items-center">
-                  <span className="text-gray-700 mr-2">f.jaehyon.ca/</span>
+                  <span className="text-gray-700 mr-2">127.0.0.1:5000/</span>
                   <input
                     type="text"
                     id="customAlias"
