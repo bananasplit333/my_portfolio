@@ -54,9 +54,9 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({ onFilesDropped, className, ac
             {isLoading ? (
               <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-white"></div>
             ) : isDragActive ? (
-              <p className="text-gray-600">{children || 'Drop the files here...'}</p>
+              <p className="text-gray-600">{ 'Drop the files here...'}</p>
             ) : (
-              children
+              <p className="text-gray-600">{ 'Drop the files here...'}</p>
             )}  
           </div>
       </div>
