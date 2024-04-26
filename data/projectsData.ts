@@ -31,7 +31,7 @@ const projectsData: Project[] = [
   {
     title: 'Flashcard Maker',
     description: 'Upload any documents, receive flashcards in return to boost your exam success. Built using NextJS and Groq',
-    href: '/https://www.google.com',
+    href: '/projects/flashcard_maker',
   },
   {
     title: 'Pouch',

@@ -5,6 +5,7 @@ import { formatDate } from 'pliny/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
 import { RoughNotation } from 'react-rough-notation';
 import { gray, green } from 'tailwindcss/colors'
+import Assistant from '../components/Assistant'
 
 const MAX_DISPLAY = 5
 
@@ -22,6 +23,7 @@ export default function Home() {
           <div className="animate-slidein opacity-0 text-2xl">
             Software Engineer
           </div> 
+          
           <div className="animate-slidein opacity-0 text-l">
           <p>Learn more {'      '}
             <span>
@@ -52,10 +54,14 @@ export default function Home() {
               >
                 <a className="hover:text-indigo-700" href="/contact">contact me</a>
             </RoughNotation>
-            
           </p>
+          <div>
+          
+          </div>
           </div>
         </div>
+        
+        
       </div>
     </>
   )

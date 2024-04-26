@@ -6,20 +6,25 @@ import { useDropzone } from 'react-dropzone';
 export interface DragAndDropProps {
   onFilesDropped: (files: File[]) => void;
   className?: string;
-  children: React.ReactNode;
   files: File[];
   setFiles: React.Dispatch<React.SetStateAction<File[]>>;
   accept: string;
 }
 
-const DragAndDrop: React.FC<DragAndDropProps> = ({ onFilesDropped, className, children, accept }) => {
+const DragAndDrop: React.FC<DragAndDropProps> = ({ onFilesDropped, className, accept }) => {
   const [files, setFiles] = useState<File[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop: (acceptedFiles: File[]) => {
       setFiles([...files, ...acceptedFiles]);
-      onFilesDropped([...files, ...acceptedFiles]);
+    },
+    accept: {
+      'application/msword': ['.doc', '.docx'],
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document': ['.docx'],
+      'application/vnd.ms-powerpoint': ['.ppt', '.pptx'],
+      'application/vnd.openxmlformats-officedocument.presentationml.presentation': ['.pptx'],
+      'application/pdf': ['.pdf'],
     },
   });
 
@@ -32,28 +37,6 @@ const DragAndDrop: React.FC<DragAndDropProps> = ({ onFilesDropped, className, ch
 
     const formData = new FormData();
     files.forEach((file) => formData.append('images', file));
-
-    try {
-      const response = await fetch('api/process-receipts', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (response.ok) {
-        const data = await response.blob();
-        const downloadUrl = window.URL.createObjectURL(data);
-        const link = document.createElement('a');
-        link.href = downloadUrl;
-        link.download = 'result.xlsx';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      } else {
-        console.error('Error uploading files');
-      }
-    } catch (error) {
-      console.error('Error uploading files:', error);
-    }
 
     setIsLoading(false);
   };
