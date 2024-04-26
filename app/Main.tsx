@@ -56,7 +56,6 @@ export default function Home() {
             </RoughNotation>
           </p>
           <div>
-          
           </div>
           </div>
         </div>
