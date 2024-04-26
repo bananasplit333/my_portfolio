@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from "react";
 
 import ActiveCallDetail from "./ai_assistant/ActiveCallDetail";
