@@ -38,9 +38,9 @@ export default function Home() {
                    animationDuration={1500}
                    brackets='top'
               >
-                <a href="/about" className="hover:text-indigo-700">
+                <Link href="/about" className="hover:text-indigo-700">
                    about me 
-                </a>
+                </Link>
               </RoughNotation>
             </span> or {'    '}
             <RoughNotation
@@ -52,7 +52,7 @@ export default function Home() {
                    animationDelay={820}
                    animationDuration={1620}
               >
-                <a className="hover:text-indigo-700" href="/contact">contact me</a>
+                <Link className="hover:text-indigo-700" href="/contact">contact me</Link>
             </RoughNotation>
           </p>
           <div>

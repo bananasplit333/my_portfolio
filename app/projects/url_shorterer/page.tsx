@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import React, { useState } from 'react';
 
 const UrlShortener: React.FC = () => {
@@ -42,14 +43,14 @@ const UrlShortener: React.FC = () => {
         {shortenedUrl ? (
           <div className="text-center">
             <h2 className="text-xl font-semibold mb-4">Shortened URL:</h2>
-            <a
+            <Link
               href={shortenedUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 underline"
             >
               {shortenedUrl}
-            </a>
+            </Link>
             <button
               onClick={() => setShortenedUrl('')}
               className="mt-4 bg-green-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-600"
