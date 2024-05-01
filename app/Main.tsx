@@ -5,7 +5,6 @@ import { formatDate } from 'pliny/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
 import { RoughNotation } from 'react-rough-notation';
 import { gray, green } from 'tailwindcss/colors'
-import Assistant from '../components/Assistant'
 
 const MAX_DISPLAY = 5
 
