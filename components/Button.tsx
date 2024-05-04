@@ -19,11 +19,10 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, isLoading}) => {
   ) : (
     <p>{label}</p>
   )
-
   return (
     <button
       onClick={onClick}
-      className={`bg-white text-black border-2 border-gray-300 rounded-lg px-5 py-2 text-base outline-none shadow-md transition-all duration-300 ease-in-out`}
+      className={`bg-blue-500 text-white text-bold rounded px-4 py-2`}
     >
       {Contents}
     </button>

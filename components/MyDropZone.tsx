@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
+import Button from './Button';
 
 const DragAndDrop = () => {
   const [files, setFiles] = useState<File[]>([]);
@@ -35,7 +36,7 @@ const DragAndDrop = () => {
 
   return (
     <div>
-      <div {...getRootProps({ className: 'dropzone' })}>
+      <div {...getRootProps({ className: 'dark:bg-zinc-900 bg-white dropzone w-300px h-64 flex flex-col justify-center items-center rounded-lg border-2 border-dashed border-gray-300' })}>
         <input {...getInputProps()} />
         {isDragActive ? (
           <p>Drop the files here...</p>
@@ -44,13 +45,9 @@ const DragAndDrop = () => {
         )}
       </div>
 
-      <div className="button-container">
-        <button onClick={handleClearQueue} disabled={isLoading}>
-          Clear
-        </button>
-        <button onClick={handleSubmit} disabled={isLoading}>
-          {isLoading ? 'Submitting...' : 'Submit'}
-        </button>
+      <div className="grid grid-cols-4 gap-2 pt-4 justify-center flex-col flex">
+        <Button label="Clear" onClick={handleClearQueue} disabled={isLoading}/>
+        <Button label={isLoading? 'Submitting..' : 'Submit'} onClick={handleSubmit} disabled={isLoading}/>
       </div>
 
       {files.length > 0 && (
