@@ -1,6 +1,6 @@
 'use client';
 
-import DragAndDrop from '@/components/MyDropZone';
+import DragAndDrop from '../../../components/MyDropZone';
 
 const ReceiptParser = () => {
   return (
