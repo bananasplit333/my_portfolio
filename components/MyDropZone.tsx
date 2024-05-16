@@ -6,7 +6,7 @@ const DragAndDrop = () => {
   const [files, setFiles] = useState<File[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const onDrop = useCallback((acceptedFiles) => {
+  const onDrop = useCallback((acceptedFiles: React.SetStateAction<File[]>) => {
     setFiles(acceptedFiles);
   }, []);
 
