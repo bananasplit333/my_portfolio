@@ -3,12 +3,7 @@ import Button from "@/components/Button";
 import Head from "next/head";
 import Link from "next/link";
 import Script from "next/script";
-import {render} from "react-dom";
-
 import React, { useEffect, useRef, useState } from "react";
-// Declare the Calendly property on the Window interface
-
-  
 
 export default function ContactPage() {
   function handleClick() {
