@@ -9815,6 +9815,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-calendly@npm:^4.3.0":
+  version: 4.3.0
+  resolution: "react-calendly@npm:4.3.0"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: f3e38e62b61f82986b557239df2eab283831bbdcc14586a5d28a7ad7ea53432bbec9b4530830290743605ab6b8d3c6f5164cdfb09214799b58c0ef6d89ddd74e
+  languageName: node
+  linkType: hard
+
 "react-dom@npm:18.2.0":
   version: 18.2.0
   resolution: "react-dom@npm:18.2.0"
@@ -11372,6 +11382,7 @@ __metadata:
     prettier: ^3.0.0
     prettier-plugin-tailwindcss: ^0.5.11
     react: 18.2.0
+    react-calendly: ^4.3.0
     react-dom: 18.2.0
     react-dropzone: ^14.2.3
     react-rough-notation: ^1.0.5
