@@ -10,10 +10,10 @@ const VapiWidget = () => {
         width: "50px", // min-width of the button
         height: "50px", // height of the button
         idle: { // button state when the call is not active.
-          color: `rgb(93, 254, 202)`, 
+          color: `rgb(70,130,180)`, 
           type: "pill", // or "round"
-          title: "Have a quick question?", // only required in case of Pill
-          subtitle: "Talk with my AI assistant", // only required in case of pill
+          title: "Questions?", // only required in case of Pill
+          subtitle: "Try my AI assistant!", // only required in case of pill
           icon: `https://unpkg.com/lucide-static@0.321.0/icons/phone.svg`,
         },
         loading: { // button state when the call is connecting
