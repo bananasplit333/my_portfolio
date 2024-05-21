@@ -13,7 +13,7 @@ const VapiWidget = () => {
           color: `rgb(93, 254, 202)`, 
           type: "pill", // or "round"
           title: "Have a quick question?", // only required in case of Pill
-          subtitle: "Talk with our AI assistant", // only required in case of pill
+          subtitle: "Talk with my AI assistant", // only required in case of pill
           icon: `https://unpkg.com/lucide-static@0.321.0/icons/phone.svg`,
         },
         loading: { // button state when the call is connecting

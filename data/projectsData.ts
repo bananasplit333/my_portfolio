@@ -13,6 +13,12 @@ const projectsData: Project[] = [
     href: '/projects/weatherapp',
   },
   {
+    title: 'PortfolioAI',
+    description: 'An AI powered voice asisstant that allows users to interact with the web porfolio just by voice. Ask any questions about me, or ask any clarifying questions about my past work, and the AI will answer for you with ease!',
+    imgSrc: '/static/images/weatherapp.png',
+    href:'/projects/voice_assistant',
+  },
+  {
     title: 'RecipeParser',
     description: 'Enter a URL link and get the cooking instructions and ingredients. No more long winded stories, no more ugly clutter. Utilizes webscarping and NLP.',
     href:'/projects/altfood'

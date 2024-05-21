@@ -3631,7 +3631,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vapi-ai/web@npm:^1.0.263, @vapi-ai/web@npm:^1.1.0":
+"@vapi-ai/web@npm:^1.0.263":
   version: 1.1.0
   resolution: "@vapi-ai/web@npm:1.1.0"
   dependencies:
@@ -3639,6 +3639,17 @@ __metadata:
     "@vapi-ai/web": ^1.0.263
     events: ^3.3.0
   checksum: 61ef9a4dba33ba59b53647de8b6d933f5879c0b88722a536c2061afb2319e09fd8a8c56926ed3adda8cf830b8b33d6503bfb0b1079b86ef7109ce8322a3a734f
+  languageName: node
+  linkType: hard
+
+"@vapi-ai/web@npm:^1.1.5":
+  version: 1.1.5
+  resolution: "@vapi-ai/web@npm:1.1.5"
+  dependencies:
+    "@daily-co/daily-js": ^0.58.0
+    "@vapi-ai/web": ^1.0.263
+    events: ^3.3.0
+  checksum: 7cdd3a4e95634edb75bcf1b44338f28d737602d0b861c8c5bca5a4c6ed6b9881468559730bd202579b8dedcfae25c63140f0fbf1d863e9390b1b3dc33f110b0b
   languageName: node
   linkType: hard
 
@@ -11359,7 +11370,7 @@ __metadata:
     "@types/typed.js": ^2.0.9
     "@typescript-eslint/eslint-plugin": ^6.1.0
     "@typescript-eslint/parser": ^6.1.0
-    "@vapi-ai/web": ^1.1.0
+    "@vapi-ai/web": ^1.1.5
     autoprefixer: ^10.4.13
     contentlayer: 0.3.4
     cross-env: ^7.0.3

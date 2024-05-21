@@ -63,6 +63,7 @@ function VoiceAI() {
         console.log("BUTTON PRESSED, CONNECTING....")
         vapi.start("2b21847b-8524-4d08-b2af-6474a218fe8f");
     };
+    
     const endCall = () => {
         vapi.stop();
     };
@@ -87,7 +88,6 @@ function VoiceAI() {
                 />
             )}
             
-        <VapiWidget/>
         </div>
         </>
     )
