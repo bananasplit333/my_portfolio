@@ -1,5 +1,8 @@
+'use client';
+
 import Link from '@/components/Link'
 import { RoughNotation } from 'react-rough-notation';
+import VapiWidget from './projects/voice_assistant/utils/vapi_widget';
 
 const MAX_DISPLAY = 5
 
@@ -50,6 +53,7 @@ export default function Home() {
             </RoughNotation>
           </p>
           <div>
+          <VapiWidget/>
           </div>
           </div>
         </div>
