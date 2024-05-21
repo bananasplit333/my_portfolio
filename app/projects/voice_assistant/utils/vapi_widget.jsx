@@ -8,7 +8,7 @@ const VapiWidget = () => {
     const apiKey = '970f9762-4192-4a91-8767-966e522385c3'; // Substitute with your Public key from Vapi Dashboard.
     const buttonConfig = {
         position: "bottom-right", // "bottom" | "top" | "left" | "right" | "top-right" | "top-left" | "bottom-left" | "bottom-right"
-        offset: "120px", // decide how far the button should be from the edge
+        offset: "40px", // decide how far the button should be from the edge
         width: "50px", // min-width of the button
         height: "50px", // height of the button
         idle: { // button state when the call is not active.
