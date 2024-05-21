@@ -1,3 +1,5 @@
+'use client'; 
+
 import { useEffect } from 'react';
 
 const VapiWidget = () => {
@@ -6,13 +8,13 @@ const VapiWidget = () => {
     const apiKey = '970f9762-4192-4a91-8767-966e522385c3'; // Substitute with your Public key from Vapi Dashboard.
     const buttonConfig = {
         position: "bottom-right", // "bottom" | "top" | "left" | "right" | "top-right" | "top-left" | "bottom-left" | "bottom-right"
-        offset: "40px", // decide how far the button should be from the edge
+        offset: "120px", // decide how far the button should be from the edge
         width: "50px", // min-width of the button
         height: "50px", // height of the button
         idle: { // button state when the call is not active.
           color: `rgb(70,130,180)`, 
           type: "pill", // or "round"
-          title: "Questions?", // only required in case of Pill
+          title: "", // only required in case of Pill
           subtitle: "Try my AI assistant!", // only required in case of pill
           icon: `https://unpkg.com/lucide-static@0.321.0/icons/phone.svg`,
         },

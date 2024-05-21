@@ -1,4 +1,4 @@
-'use client';
+
 
 import Link from '@/components/Link'
 import { RoughNotation } from 'react-rough-notation';
@@ -52,8 +52,9 @@ export default function Home() {
                 <Link className="hover:text-indigo-700" href="/contact">contact me</Link>
             </RoughNotation>
           </p>
-          <div>
+          
           <VapiWidget/>
+          <div>
           </div>
           </div>
         </div>
