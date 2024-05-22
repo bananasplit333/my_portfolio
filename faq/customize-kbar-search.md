@@ -37,6 +37,22 @@ export const SearchProvider = ({ children }) => {
             section: 'Home',
             perform: () => router.push('/projects'),
           },
+          {
+            id: 'about',
+            name: 'About',
+            keywords: '',
+            shortcut: ['a'],
+            section: 'Home',
+            perform: () => router.push('/about'),
+          },
+          {
+            id: 'contact',
+            name: 'Contact',
+            keywords: '',
+            shortcut: ['c'],
+            section: 'Home',
+            perform: () => router.push('/contact'),
+          },
         ],
         onSearchDocumentsLoad(json) {
           return json.map((post: CoreContent<Blog>) => ({
