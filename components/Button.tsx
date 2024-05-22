@@ -3,12 +3,13 @@ import RiseLoader from 'react-spinners/RiseLoader';
 
 interface ButtonProps {
   label: string;
+  className: string; 
   onClick: () => void;
   isLoading?: boolean;
   disabled?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({ label, onClick, isLoading}) => {
+const Button: React.FC<ButtonProps> = ({ label, className, onClick, isLoading}) => {
 
   const Contents = isLoading ? (
     <RiseLoader
@@ -19,14 +20,16 @@ const Button: React.FC<ButtonProps> = ({ label, onClick, isLoading}) => {
   ) : (
     <p>{label}</p>
   )
+
   return (
     <button
       onClick={onClick}
-      className={`bg-blue-500 text-white text-bold rounded px-4 py-2`}
+      className={className}
     >
       {Contents}
     </button>
   );
+  
 };
 
 export default Button;

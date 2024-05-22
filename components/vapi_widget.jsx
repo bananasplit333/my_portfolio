@@ -1,4 +1,4 @@
-'use client'; 
+'use client';
 
 import { useEffect } from 'react';
 
@@ -34,6 +34,8 @@ const VapiWidget = () => {
         },
       }; // Modify this as required
 
+    console.log('Mounting VapiWidget');
+
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js';
     script.defer = true;
@@ -50,9 +52,10 @@ const VapiWidget = () => {
     };
 
     return () => {
+      console.log('Unmounting VapiWidget');
       document.body.removeChild(script);
     };
-  }, []);
+  }, []); // Add an empty dependency array to ensure the effect is only run once
 
   return null;
 };
