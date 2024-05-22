@@ -43,13 +43,7 @@ const DragAndDrop = () => {
         ) : (
           <p>Drag and drop some files here, or click to select files</p>
         )}
-      </div>
-
-      <div className="grid grid-cols-4 gap-2 pt-4 justify-center flex-col flex">
-        <Button label="Clear" onClick={handleClearQueue} disabled={isLoading}/>
-        <Button label={isLoading? 'Submitting..' : 'Submit'} onClick={handleSubmit} disabled={isLoading}/>
-      </div>
-
+      </div>  
       {files.length > 0 && (
         <div className="file-list">
           <p>Files to be converted:</p>
