@@ -32,6 +32,7 @@ function VoiceAI() {
     });
 
     vapi.on("speech-start", () => {
+      setIsLoading(false)
       setAssistantIsSpeaking(true);
     });
 
@@ -68,7 +69,6 @@ function VoiceAI() {
     }
     
     const endCall = () => {
-        setIsLoading(false)
         vapi.stop();
     };
             
@@ -77,6 +77,7 @@ function VoiceAI() {
         <div className="flex flex-col justify-center">
           {!connected ? (
             <>
+            
               <a href="#\\_" className="relative inline-block px-4 py-2 font-medium group" onClick={handleClick}>
                 <span className="sm:w-1/6 md:w-1/6 lg:w-1/3 xl:w-1/3 max-w-48 absolute inset-0 h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 dark:bg-slate-200 bg-gray-600 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
                 <span className="sm:w-1/6 md:w-1/6 lg:w-1/3 xl:w-1/3 max-w-48 dark:bg-gray-900 dark:group-hover:bg-slate-200 absolute inset-0 h-full bg-white border-2 group-hover:bg-black border-gray ease-linear duration-100 transition-all"></span>
@@ -97,7 +98,7 @@ function VoiceAI() {
                         Try My Voice Assistant!
                       </span>
                       <span className="block xs:hidden sm:block md:block lg:hidden xl:hidden">
-                        Call My AI!
+                        Try My AI!
                       </span>
                     </>
                   )}

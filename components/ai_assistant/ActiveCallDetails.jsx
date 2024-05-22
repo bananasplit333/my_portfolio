@@ -5,8 +5,7 @@ import VolumeLevel from './call/VolumeLevel';
 const ActiveCallDetail = ({ assistantIsSpeaking, volumeLevel, onEndCallClick }) => {
   return (
     <div>
-      <div className="flex flex-col w-1/3 items-center justify-center p-4 border border-gray-300 rounded-lg shadow-md w-46 h-48">
-        <AssistantSpeechIndicator isSpeaking={assistantIsSpeaking} />
+      <div className="w-64 flex flex-col h-full items-left justify-left p-4 border border-gray-300 rounded-lg shadow-md">
         <VolumeLevel volume={volumeLevel} />
       </div>
       <div className="mt-5 text-left">
