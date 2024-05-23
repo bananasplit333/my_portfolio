@@ -67,15 +67,12 @@ const RecipeParser: React.FC = () => {
   console.log(recipeData)
   return (
     <div>
-      <div className="absolute top-1/3 right-1/4">
+      <div className="absolute right-10 top-1/3 m:right-1/4 l:right-1/4 xl:right-1/4 sm:top-1/4">
         <HomeButton />
       </div>
-      
+
       {recipeData ? (
         <div className="min-h-screen justify-center flex flex-col">
-          
-        
-
         <RecipeCard
           img_url={recipeData.img_url}
           name={recipeData.name}

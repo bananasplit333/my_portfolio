@@ -98,7 +98,7 @@ const WeatherApp: React.FC = () => {
     <div>
       
       <div className="flex min-h-screen items-center justify-center">
-        <div className="absolute top-1/3 right-1/4">
+        <div className="absolute right-10 top-1/3 m:right-1/4 l:right-1/4 xl:right-1/4 sm:top-1/4">
           <HomeButton />
         </div>
         {!hasInput ? (
