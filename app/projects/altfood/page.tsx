@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import RecipeCard from '../../../components/RecipeCard';
 import RecipeCardSkeleton from '../../../components/RecipeCardSkeleton';
 import React from 'react';
+import HomeButton from '@/components/HomeButton';
 
 
 interface RecipeData {
@@ -66,46 +67,53 @@ const RecipeParser: React.FC = () => {
   console.log(recipeData)
   return (
     <div>
-    {recipeData ? (
-      <div className="min-h-screen justify-center flex flex-col">
-      <RecipeCard
-        img_url={recipeData.img_url}
-        name={recipeData.name}
-        prepTime={recipeData.prepTime}
-        cookTime={recipeData.cookTime}
-        recipeYield={recipeData.recipeYield}
-        ingredients={recipeData.ingredients}
-        directions={recipeData.directions}
-      />
-      </div>
-    ) : isLoading ? (
-      <div className="flex flex-col min-h-screen justify-center">
-        <RecipeCardSkeleton />
-      </div>
-    ) : (
-      <div className="flex flex-col min-h-screen justify-center max-w-xl mx-auto p-4">
-        <h1 className="text-2xl font-bold mb-4">Clear away the clutter on any recipe site.</h1>
-        <p className="text-gray-600 mb-4 dark:text-gray-100">
-          Get the instructions without the fluff. No more popups, ads, or life stories.
-        </p>
-        <form className="flex gap-2 mb-4">
-          <input
-            type="url"
-            value={recipeUrl}
-            onChange={(e) => setRecipeUrl(e.target.value)}
-            onClick={gainedFocus}
-            onBlur={lostFocus}
-            placeholder={showPlaceholder ? 'Paste a recipe URL to remove the clutter.' : ''}
-            className="dark:text-black flex-grow border rounded px-2 py-1"
-            required
-          />
-          <button onClick={handleSubmit} className="bg-blue-500 text-white rounded px-4 py-1">
-            Get recipe
-          </button>
-        </form>
-        {error && <p className="text-red-500 mb-4">{error}</p>}
+      <div className="absolute top-1/3 right-1/4">
+        <HomeButton />
       </div>
       
+      {recipeData ? (
+        <div className="min-h-screen justify-center flex flex-col">
+          
+        
+
+        <RecipeCard
+          img_url={recipeData.img_url}
+          name={recipeData.name}
+          prepTime={recipeData.prepTime}
+          cookTime={recipeData.cookTime}
+          recipeYield={recipeData.recipeYield}
+          ingredients={recipeData.ingredients}
+          directions={recipeData.directions}
+        />
+        </div>
+      ) : isLoading ? (
+        <div className="flex flex-col min-h-screen justify-center">
+          <RecipeCardSkeleton />
+        </div>
+      ) : (
+        <div className="flex flex-col min-h-screen justify-center max-w-xl mx-auto p-4">
+          <h1 className="text-2xl font-bold mb-4">Clear away the clutter on any recipe site.</h1>
+          <p className="text-gray-600 mb-4 dark:text-gray-100">
+            Get the instructions without the fluff. No more popups, ads, or life stories.
+          </p>
+          <form className="flex gap-2 mb-4">
+            <input
+              type="url"
+              value={recipeUrl}
+              onChange={(e) => setRecipeUrl(e.target.value)}
+              onClick={gainedFocus}
+              onBlur={lostFocus}
+              placeholder={showPlaceholder ? 'Paste a recipe URL to remove the clutter.' : ''}
+              className="dark:text-black flex-grow border rounded px-2 py-1"
+              required
+            />
+            <button onClick={handleSubmit} className="bg-blue-500 text-white rounded px-4 py-1">
+              Get recipe
+            </button>
+          </form>
+          {error && <p className="text-red-500 mb-4">{error}</p>}
+        </div>
+        
       )}
     </div>
 );

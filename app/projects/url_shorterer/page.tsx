@@ -1,5 +1,6 @@
 'use client';
 
+import HomeButton from '@/components/HomeButton';
 import Link from 'next/link';
 import React, { useState } from 'react';
 
@@ -39,6 +40,11 @@ const UrlShortener: React.FC = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen">
+      
+      <div className="absolute top-1/3 right-1/4">
+        <HomeButton />
+      </div>
+      
       <div className="bg-white shadow-md rounded-xl p-6 w-full max-w-md">
         {shortenedUrl ? (
           <div className="text-center">
