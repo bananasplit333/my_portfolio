@@ -5,24 +5,19 @@ const numBars = 10;
 const VolumeLevel = ({ volume }) => {
   return (
     <div>
-      <div className="dark:text-white text-black">
-        <p>Volume Level:</p>
-      </div>
-      <div className="flex">
+      <div className="flex h-5">
         {Array.from({ length: numBars }, (_, i) => (
           <div
             key={i}
             style={{
-              width: "20px",
-              height: "20px",
+              width: "7px",
+              height: "7px",
               margin: "2px",
-              backgroundColor: i / numBars < volume ? "#3ef07c" : "white",
-              
+              backgroundColor: i / numBars < volume ? "#3ef07c" : "#FFF8DC",
             }}
           />
         ))}
       </div>
-      <div className="dark:text-white text-black">{volume}</div>
     </div>
   );
 };

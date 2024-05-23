@@ -56,7 +56,7 @@ export default function Home() {
             </p>          
           </div>
 
-          <div className="">
+          <div className="animate-slidein opacity-0">
             <VoiceAI/>
           </div>
 

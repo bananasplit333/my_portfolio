@@ -4,6 +4,7 @@ import Button from '@/components/Button';
 import ActiveCallDetail from '../../../components/ai_assistant/ActiveCallDetails';
 import { useEffect, useState } from 'react';
 import Vapi from "@vapi-ai/web"
+import VolumeLevel from '@/components/ai_assistant/call/VolumeLevel';
 const vapi = new Vapi("970f9762-4192-4a91-8767-966e522385c3")
 
 function VoiceAI() {
@@ -57,27 +58,31 @@ function VoiceAI() {
 
     // call start handler
     const handleClick = async () => {
-      setIsLoading(true);
-      try {
-        console.log("BUTTON PRESSED, CONNECTING....")
-        vapi.start("2b21847b-8524-4d08-b2af-6474a218fe8f");
-        setConnecting(true);
-      } catch (error) {
-        console.log('Error: ' , error);
+      if (connected) {
         setIsLoading(false);
+        vapi.stop();
+      } else {
+        setIsLoading(true);
+        try {
+          console.log("BUTTON PRESSED, CONNECTING....");
+          vapi.start("2b21847b-8524-4d08-b2af-6474a218fe8f");
+          setConnecting(true);
+        } catch (error) {
+          console.log('Error: ', error);
+          setIsLoading(false);
+        }
       }
-    }
+    };
     
     const endCall = () => {
+        setIsLoading(false);
         vapi.stop();
     };
             
     return (
       <>
         <div className="flex flex-col justify-center">
-          {!connected ? (
-            <>
-            
+      
               <a href="#\\_" className="relative inline-block px-4 py-2 font-medium group" onClick={handleClick}>
                 <span className="sm:w-1/6 md:w-1/6 lg:w-1/3 xl:w-1/3 max-w-48 absolute inset-0 h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 dark:bg-slate-200 bg-gray-600 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
                 <span className="sm:w-1/6 md:w-1/6 lg:w-1/3 xl:w-1/3 max-w-48 dark:bg-gray-900 dark:group-hover:bg-slate-200 absolute inset-0 h-full bg-white border-2 group-hover:bg-black border-gray ease-linear duration-100 transition-all"></span>
@@ -92,7 +97,12 @@ function VoiceAI() {
                       </div>
                       Loading...
                     </div>
+                  ) : connected? (
+                    <div className="h-full">
+                      <VolumeLevel volume={volumeLevel} />
+                    </div>
                   ) : (
+                    
                     <>
                       <span className="hidden xs:hidden sm:hidden md:hidden lg:block xl:block">
                         Try My Voice Assistant!
@@ -104,14 +114,6 @@ function VoiceAI() {
                   )}
                 </span>
               </a>
-            </>
-          ) : (
-            <ActiveCallDetail
-              assistantIsSpeaking={assistantIsSpeaking}
-              volumeLevel={volumeLevel}
-              onEndCallClick={endCall}
-            />
-          )}
         </div>
       </>
     );
