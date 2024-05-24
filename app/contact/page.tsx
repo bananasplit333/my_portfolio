@@ -1,4 +1,5 @@
 'use client';
+import Button from "@/components/Button";
 import Head from "next/head";
 import Script from "next/script";
 import React from "react";
@@ -32,9 +33,9 @@ export default function ContactPage() {
             Contact
           </h1>
         </div>
-        <a href="" onClick={handleClick}>
+        <button onClick={handleClick} >
           Schedule time with me
-        </a>
+        </button>
         <p className="pt-12">
           Want to chat? Feel free to reach out at jaehyon.yoo@gmail.com. I'd
           love to hear from you!
