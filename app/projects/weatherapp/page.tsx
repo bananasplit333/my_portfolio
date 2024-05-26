@@ -7,8 +7,8 @@ import { useEffect, useRef } from 'react';
 
 import React from 'react';
 import { useState } from 'react';
-import Link from 'next/link';
 import HomeButton from '@/components/HomeButton';
+import Image from 'next/image';
 
 const WeatherApp: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -132,7 +132,7 @@ const WeatherApp: React.FC = () => {
             <div className="col-span-2">
               <div className="rounded-lg bg-black-500 text-center">
                 <div className="flex justify-center">
-                  <img src={`/static/images/${weatherData.icon}.png`} alt="Weather Icon" />
+                  <Image src={`/static/images/${weatherData.icon}.png`} alt="Weather Icon" />
                 </div>
                 <div className="mb-2 text-2xl font-bold">{weatherData.city}</div>
                 <div className="mb-4 text-lg text-slate-50">{weatherData.date}</div>
