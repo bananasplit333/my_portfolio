@@ -13,6 +13,11 @@ const projectsData: Project[] = [
     href: '/projects/weatherapp',
   },
   {
+    title: 'Receiptify',
+    description: 'Utilizes OCR to extract key information from receipt images, and return a expense report in excel. Automates the annoying task of having to input your expenses manually.',
+    href:'https://receiptify-app.vercel.app/'
+  },
+  {
     title: 'RecipeParser',
     description: 'Enter a URL link and get the cooking instructions and ingredients. No more long winded stories, no more ugly clutter. Utilizes webscarping and NLP.',
     href:'/projects/altfood'
@@ -28,11 +33,6 @@ const projectsData: Project[] = [
     to predict whether or not the image is a hot dog or not a hot dog.`,
     href: 'https://github.com/bananasplit333/hotdog_nothotdog/blob/main/model.ipynb',
   },  
-  {
-    title: 'Image2Excel',
-    description: 'Utilizes OCR to extract key information from receipt images, and return a expense report in excel. Automates the annoying task of having to input your expenses manually.',
-    href:'/projects/image2excell'
-  },
   {
     title: 'Pouch',
     description: 'Ecommerce site selling various goods. Built on NextJS, utilizes Shopify checkout',
