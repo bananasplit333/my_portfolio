@@ -86,6 +86,12 @@ const WeatherApp: React.FC = () => {
     }
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key == 'Enter') {
+      handleSubmit();
+    }
+  }
+
   const gainedFocus = () => {
     setShowPlaceholder(false);
   };
@@ -111,6 +117,7 @@ const WeatherApp: React.FC = () => {
                 onChange={handleInputChange}
                 onClick={gainedFocus}
                 onBlur={lostFocus}
+                onKeyDown={handleKeyDown}
                 placeholder={showPlaceholder ? 'Enter a City' : ''}
               />
             </div>
@@ -132,7 +139,7 @@ const WeatherApp: React.FC = () => {
             <div className="col-span-2">
               <div className="rounded-lg bg-black-500 text-center">
                 <div className="flex justify-center">
-                  <Image src={`/static/images/${weatherData.icon}.png`} alt="Weather Icon" />
+                  <Image src={`/static/images/${weatherData.icon}.png`} alt="Weather Icon" width={150} height={150}/>
                 </div>
                 <div className="mb-2 text-2xl font-bold">{weatherData.city}</div>
                 <div className="mb-4 text-lg text-slate-50">{weatherData.date}</div>
