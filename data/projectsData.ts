@@ -15,7 +15,7 @@ const projectsData: Project[] = [
   {
     title: 'Receiptify',
     description: 'Utilizes OCR to extract key information from receipt images, and return a expense report in excel. Automates the annoying task of having to input your expenses manually.',
-    href:'https://receiptify-app.vercel.app/'
+    href:'https://receiptify-new.vercel.app/'
   },
   {
     title: 'RecipeParser',
