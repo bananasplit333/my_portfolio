@@ -36,7 +36,7 @@ export default function ContactPage() {
           >
             {rootElement && (
               <PopupButton
-                url="https://calendly.com/jaehyon-yoo/30min"
+                url="https://calendly.com/jaehyon-yoo/project-inquiry"
                 rootElement={rootElement}
                 text="schedule a call!"
                 className="hover:bg-blue-200"
