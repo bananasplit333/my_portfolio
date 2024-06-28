@@ -3,7 +3,8 @@
 import { useState, useCallback } from 'react'
 import { useDropzone } from 'react-dropzone'
 import { ImageUp } from 'lucide-react'
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { DotLottie, DotLottieReact } from '@lottiefiles/dotlottie-react';
+import Image from 'next/image';
 
 export default function RemBg() {
   const TEST_URL = 'http://127.0.0.1:5000/process_image'
@@ -67,12 +68,19 @@ export default function RemBg() {
       
       <input {...getInputProps()} />
       {isDragActive ? (
-        <p className="text-gray-300">Drop files here..</p>
+        <div className="w-[300px] h-[300px]">
+        <DotLottieReact
+          src="/static/lottie_assets/upload_animation.json"
+          loop
+          autoplay
+        />
+        <p className="text-xl items-center text-center">Drop Here!</p>
+        </div>
       ) : (
         <div className="flex flex-col items-center text-gray-300">
-          <p>Drag & drop some files here, or</p>
-          <ImageUp className="my-4 h-[30px] w-[30px]" />
-          <button>Browse Files</button>
+          <p className="text-lg">Drag & drop some files here, or</p>
+          <ImageUp className="my-4 h-[60px] w-[60px]" />
+          <button className="text-lg">Browse Files</button>
         </div>
       )}
     </div>
