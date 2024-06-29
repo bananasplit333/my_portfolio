@@ -7,7 +7,7 @@ import { DotLottie, DotLottieReact } from '@lottiefiles/dotlottie-react';
 import Image from 'next/image';
 
 export default function RemBg() {
-  const TEST_URL = 'http://127.0.0.1:5000/process_image'
+  const TEST_URL = 'https://rembg.toddie.org/process_image'
   const [img, setImg] = useState<File>()
   const [isUploading, setIsUploading] = useState<boolean>(false)
   const onDrop = useCallback(async (acceptedFiles) => {
