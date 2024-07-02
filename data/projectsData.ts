@@ -7,10 +7,9 @@ interface Project {
 
 const projectsData: Project[] = [
   {
-    title: 'WeatherApp',
-    description: `Simple and intuitive web application that allows users to inquire about current weather conditions anywhere in the world. Leverages OpenAI's tool calling to provides accurate and up-to-date weather information based on user input.`,
-    imgSrc: '/static/images/weatherapp.png',
-    href: '/projects/weatherapp',
+    title: 'Cutout - Bg Remover',
+    description: 'work on this later - tldr -- image dragu, image without bg poppu',
+    href: '/projects/bg_remove',
   },
   {
     title: 'Receiptify',
@@ -19,9 +18,16 @@ const projectsData: Project[] = [
     href: 'https://receiptify-new.vercel.app/',
   },
   {
-    title: 'Cutout - Bg Remover',
-    description: 'work on this later - tldr -- image dragu, image without bg poppu',
-    href: '/projects/bg_remove',
+    title: 'ImageToPrompt',
+    description:
+      'Reverse engineer any image into a prompt that you can feed back into Midjourney. Utilizes OpenAI API with some fine-tuning to generate a prompt from image.',
+    href: '/projects/image_to_prompt',
+  },
+  {
+    title: 'WeatherApp',
+    description: `Simple and intuitive web application that allows users to inquire about current weather conditions anywhere in the world. Leverages OpenAI's tool calling to provides accurate and up-to-date weather information based on user input.`,
+    imgSrc: '/static/images/weatherapp.png',
+    href: '/projects/weatherapp',
   },
   {
     title: 'RecipeParser',

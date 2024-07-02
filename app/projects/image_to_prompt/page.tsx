@@ -28,7 +28,6 @@ export default function ImageToPrompt() {
       })
 
       console.log('response ok')
-      setIsUploading(false)
       if (response.ok) {
         // Get the processed image as a blob
         const blob = await response.blob()
