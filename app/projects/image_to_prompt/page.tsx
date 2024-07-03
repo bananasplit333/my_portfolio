@@ -103,7 +103,9 @@ export default function ImageToPrompt() {
       {uploadState == 'success' && (
         <div className="items-center text-center">
           <h1 className="text-2xl pb-12">Your Prompt</h1>
-          <p className="pb-4 cursor-pointer hover:underline"  onClick={() => handleClick(promptText)}>{promptText}</p>
+          <button onClick={() => handleClick(promptText)}>
+          <p className="pb-4 cursor-pointer hover:underline" >{promptText}</p>
+          </button>
           <button
             className="text-lg hover:text-cyan-700 dark:hover:text-fuchsia-200"
             onClick={() => (setPromptText(''), setUploadState(''))}
