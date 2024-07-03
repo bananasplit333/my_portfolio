@@ -41,6 +41,6 @@
     ".contentlayer/generated",
     ".contentlayer/generated/**/*.json",
     ".next/types/**/*.ts"
-, "components/social-icons/icons.jsx", "components/social-icons/index.jsx", "components/utils/utils.jsx", "components/ai_assistant/call/AssistantSpeechIndicator.jsx", "components/ai_assistant/call/VolumeLevel.jsx", "components/ai_assistant/ActiveCallDetails.jsx", "components/vapi_widget.jsx", "app/projects/voice_assistant/page.jsx"  ],
+, "components/social-icons/icons.jsx", "components/social-icons/index.jsx", "utils/utils.jsx", "components/ai_assistant/call/AssistantSpeechIndicator.jsx", "components/ai_assistant/call/VolumeLevel.jsx", "components/ai_assistant/ActiveCallDetails.jsx", "components/vapi_widget.jsx", "app/projects/voice_assistant/page.jsx"  ],
   "exclude": ["node_modules"]
 }

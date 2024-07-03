@@ -5,13 +5,29 @@ import { useDropzone } from 'react-dropzone'
 import { ImageUp } from 'lucide-react'
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import HomeButton from '@/components/HomeButton'
-
+import { MultiStepLoader as Loader } from '@/components/ui/multi-step-loader'
 type uploadMessages = 'success' | 'error' | 'uploading' | ''
 
-export default function ImageToPrompt() {
-  const TEST_URL = 'https://rembg.toddie.org/process_image'
-  const [uploadState, setUploadState] = useState<uploadMessages>('')
+const loadingStates = [ 
+  {
+    text: "Importing...",
+  },
+  {
+    text: "Analyzing...",
+  }, 
+  {
+    text: "Extracting data...",
+  },
+  {
+    text: "Fine-tuning details...",
+  }
+]
 
+
+export default function ImageToPrompt() {
+  const TEST_URL = 'http://127.0.0.1:5000/reverse'
+  const [uploadState, setUploadState] = useState<uploadMessages>('')
+  const [promptText, setPromptText] = useState<string>('')
   const onDrop = useCallback(async (acceptedFiles) => {
     try {
       setUploadState('uploading')
@@ -29,26 +45,8 @@ export default function ImageToPrompt() {
 
       console.log('response ok')
       if (response.ok) {
-        // Get the processed image as a blob
-        const blob = await response.blob()
-
-        // Create a temporary URL for the blob
-        const url = window.URL.createObjectURL(blob)
-
-        // Create a temporary anchor element
-        const a = document.createElement('a')
-        a.style.display = 'none'
-        a.href = url
-
-        // Set the filename for the download
-        a.download = 'processed_' + acceptedFiles.name
-        // Append to the body and trigger the download
-        document.body.appendChild(a)
-        a.click()
-
-        // Clean up
-        window.URL.revokeObjectURL(url)
-        document.body.removeChild(a)
+        console.log(response.text)
+        setPromptText(await response.text())
         setUploadState('success')
       } else {
         console.log('error during api call')
@@ -66,6 +64,16 @@ export default function ImageToPrompt() {
     multiple: false,
   })
 
+  const handleClick = (text:string) => {
+      navigator.clipboard.writeText(text.replace(/['"]/g, ''))
+        .then(() => {
+          alert('Text copied');
+          console.log('Text copied to clipboard');
+        })
+        .catch((err) => {
+          console.error('Failed to copy text: ', err);
+        });
+  } 
   return (
     <div className="border-rounded flex min-h-screen w-full flex-col items-center justify-center ">
       <div className="m:right-1/4 l:right-1/4 absolute right-10 top-1/3 sm:top-1/4 xl:right-1/4">
@@ -81,7 +89,7 @@ export default function ImageToPrompt() {
         )}
         {!isDragActive && uploadState == '' && (
           <div className="flex flex-col items-center text-cyan-900 dark:text-gray-300">
-            <p className="text-lg">Drag & drop some files here, or</p>
+            <p className="text-lg">Drag & drop here, or</p>
             <ImageUp className="my-4 h-[60px] w-[60px]" />
             <button className="text-lg">Browse Files</button>
           </div>
@@ -89,24 +97,18 @@ export default function ImageToPrompt() {
       </div>
       {uploadState == 'uploading' && (
         <div className="h-[300px] w-[300px]">
-          <DotLottieReact src="/static/lottie_assets/loading_animation.json" loop autoplay />
+          <Loader loadingStates={loadingStates} loading={uploadState == 'uploading'} duration={1000}/>
         </div>
       )}
       {uploadState == 'success' && (
         <div className="items-center text-center">
-          <p className="text-2xl ">Success!</p>
-          <div className="h-[300px] w-[300px]">
-            <DotLottieReact
-              src="/static/lottie_assets/success_animation.json"
-              loop={false}
-              autoplay
-            />
-          </div>
+          <h1 className="text-2xl pb-12">Your Prompt</h1>
+          <p className="pb-4 cursor-pointer hover:underline"  onClick={() => handleClick(promptText)}>{promptText}</p>
           <button
             className="text-lg hover:text-cyan-700 dark:hover:text-fuchsia-200"
-            onClick={() => setUploadState('')}
+            onClick={() => (setPromptText(''), setUploadState(''))}
           >
-            Upload another image
+            upload another image
           </button>
         </div>
       )}
