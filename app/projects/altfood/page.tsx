@@ -24,7 +24,7 @@ const RecipeParser: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(null); // Reset any previous errors
     setIsLoading(true); // Set isLoading to true before the fetch operation

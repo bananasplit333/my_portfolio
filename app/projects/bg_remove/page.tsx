@@ -14,7 +14,7 @@ export default function RemBg() {
   const [isUploading, setIsUploading] = useState<boolean>(false)
   const [uploadState, setUploadState] = useState<uploadMessages>('')
 
-  const onDrop = useCallback(async (acceptedFiles) => {
+  const onDrop = useCallback(async (acceptedFiles: File[]) => {
     try {
       setUploadState('uploading')
       console.log('attempting to process img: ', acceptedFiles)
@@ -44,7 +44,7 @@ export default function RemBg() {
         a.href = url
 
         // Set the filename for the download
-        a.download = 'processed_' + acceptedFiles.name
+        a.download = 'processed_' + acceptedFiles[0].name
         // Append to the body and trigger the download
         document.body.appendChild(a)
         a.click()

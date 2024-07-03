@@ -28,7 +28,7 @@ export default function ImageToPrompt() {
   const TEST_URL = 'http://127.0.0.1:5000/reverse'
   const [uploadState, setUploadState] = useState<uploadMessages>('')
   const [promptText, setPromptText] = useState<string>('')
-  const onDrop = useCallback(async (acceptedFiles) => {
+  const onDrop = useCallback(async (acceptedFiles: File[]) => {
     try {
       setUploadState('uploading')
       console.log('attempting to process img: ', acceptedFiles)
