@@ -117,7 +117,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@algolia/client-search@npm:4.24.0":
+"@algolia/client-search@npm:4.24.0, @algolia/client-search@npm:^4.24.0":
   version: 4.24.0
   resolution: "@algolia/client-search@npm:4.24.0"
   dependencies:
@@ -2176,6 +2176,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@eslint/object-schema@npm:^2.1.4":
+  version: 2.1.4
+  resolution: "@eslint/object-schema@npm:2.1.4"
+  checksum: 5a03094115bcdab7991dbbc5d17a9713f394cebb4b44d3eaf990d7487b9b8e1877b817997334ab40be52e299a0384595c6f6ba91b389901e5e1d21efda779271
+  languageName: node
+  linkType: hard
+
 "@fal-works/esbuild-plugin-global-externals@npm:^2.1.2":
   version: 2.1.2
   resolution: "@fal-works/esbuild-plugin-global-externals@npm:2.1.2"
@@ -3385,15 +3392,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/typed.js@npm:^2.0.9":
-  version: 2.0.9
-  resolution: "@types/typed.js@npm:2.0.9"
-  dependencies:
-    typed.js: "*"
-  checksum: 9abf47a67ae7f91557ffa78e2693650a972f2d2826bd2e6d6cd24acf517f46f6e77ea01c5f097d345ff2876edffb993fad561c6db353b282b880da628f91fd3f
-  languageName: node
-  linkType: hard
-
 "@types/unist@npm:^2, @types/unist@npm:^2.0.0":
   version: 2.0.10
   resolution: "@types/unist@npm:2.0.10"
@@ -3607,7 +3605,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"algoliasearch@npm:^4.19.1":
+"algoliasearch@npm:^4.19.1, algoliasearch@npm:^4.24.0":
   version: 4.24.0
   resolution: "algoliasearch@npm:4.24.0"
   dependencies:
@@ -5973,19 +5971,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"formidable@npm:^2.1.2":
-  version: 2.1.2
-  resolution: "formidable@npm:2.1.2"
-  dependencies:
-    dezalgo: ^1.0.4
-    hexoid: ^1.0.0
-    once: ^1.4.0
-    qs: ^6.11.0
-  checksum: 81c8e5d89f5eb873e992893468f0de22c01678ca3d315db62be0560f9de1c77d4faefc9b1f4575098eb2263b3c81ba1024833a9fc3206297ddbac88a4f69b7a8
-  languageName: node
-  linkType: hard
-
-"formidable@npm:^3.5.1":
+"formidable@npm:^3.5.1, formidable@npm:latest":
   version: 3.5.1
   resolution: "formidable@npm:3.5.1"
   dependencies:
@@ -6217,7 +6203,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^10.2.2":
+"glob@npm:^10.2.2, glob@npm:^10.3.7, glob@npm:latest":
   version: 10.4.2
   resolution: "glob@npm:10.4.2"
   dependencies:
@@ -7756,7 +7742,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lru-cache@npm:^10.0.1, lru-cache@npm:^10.2.0":
+"lru-cache@npm:^10.0.1, lru-cache@npm:^10.2.0, lru-cache@npm:^10.3.0":
   version: 10.3.0
   resolution: "lru-cache@npm:10.3.0"
   checksum: f2289639bd94cf3c87bfd8a77ac991f9afe3af004ddca3548c3dae63ead1c73bba449a60a4e270992e16cf3261b3d4130943234d52ca3a4d4de2fc074a3cc7b5
@@ -7769,15 +7755,6 @@ __metadata:
   dependencies:
     yallist: ^3.0.2
   checksum: c154ae1cbb0c2206d1501a0e94df349653c92c8cbb25236d7e85190bcaf4567a03ac6eb43166fabfa36fd35623694da7233e88d9601fbf411a9a481d85dbd2cb
-  languageName: node
-  linkType: hard
-
-"lru-cache@npm:^6.0.0":
-  version: 6.0.0
-  resolution: "lru-cache@npm:6.0.0"
-  dependencies:
-    yallist: ^4.0.0
-  checksum: f97f499f898f23e4585742138a22f22526254fdba6d75d41a1c2526b3b6cc5747ef59c5612ba7375f42aca4f8461950e925ba08c991ead0651b4918b7c978297
   languageName: node
   linkType: hard
 
@@ -10728,6 +10705,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rimraf@npm:latest":
+  version: 5.0.7
+  resolution: "rimraf@npm:5.0.7"
+  dependencies:
+    glob: ^10.3.7
+  bin:
+    rimraf: dist/esm/bin.mjs
+  checksum: 884852abf8aefd4667448d87bdab04120a8641266c828cf382ac811713547eda18f81799d2146ffec3178f357d83d44ec01c10095949c82e23551660732bf14f
+  languageName: node
+  linkType: hard
+
 "rough-notation@npm:^0.5.1":
   version: 0.5.1
   resolution: "rough-notation@npm:0.5.1"
@@ -10806,6 +10794,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"search-insights@npm:^2.14.0":
+  version: 2.14.0
+  resolution: "search-insights@npm:2.14.0"
+  checksum: 26f3524633ee1b31cd5dea9f8e7e67c102a9e90f24efc5ae84020b6051cfc4815b38d6afdee88d278ed3ee3f01acb87dd5c80b8e8b2f4bad15d7a68e48b36681
+  languageName: node
+  linkType: hard
+
 "section-matter@npm:^1.0.0":
   version: 1.0.0
   resolution: "section-matter@npm:1.0.0"
@@ -10831,17 +10826,6 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: 40f6a95101e8d854357a644da1b8dd9d93ce786d5c6a77227bc69dbb17bea83d0d1d1d7c4cd5920a6df909f48e8bd8a5909869535007f90278289f2451d0292d
-  languageName: node
-  linkType: hard
-
-"semver@npm:^7.3.8":
-  version: 7.6.0
-  resolution: "semver@npm:7.6.0"
-  dependencies:
-    lru-cache: ^6.0.0
-  bin:
-    semver: bin/semver.js
-  checksum: 7427f05b70786c696640edc29fdd4bc33b2acf3bbe1740b955029044f80575fc664e1a512e4113c3af21e767154a94b4aa214bf6cd6e42a1f6dba5914e0b208c
   languageName: node
   linkType: hard
 
@@ -11291,21 +11275,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"superagent@npm:^8.1.2":
-  version: 8.1.2
-  resolution: "superagent@npm:8.1.2"
+"superagent@npm:latest":
+  version: 9.0.2
+  resolution: "superagent@npm:9.0.2"
   dependencies:
     component-emitter: ^1.3.0
     cookiejar: ^2.1.4
     debug: ^4.3.4
     fast-safe-stringify: ^2.1.1
     form-data: ^4.0.0
-    formidable: ^2.1.2
+    formidable: ^3.5.1
     methods: ^1.1.2
     mime: 2.6.0
     qs: ^6.11.0
-    semver: ^7.3.8
-  checksum: f3601c5ccae34d5ba684a03703394b5d25931f4ae2e1e31a1de809f88a9400e997ece037f9accf148a21c408f950dc829db1e4e23576a7f9fe0efa79fd5c9d2f
+  checksum: f471461b21f034d844fd0aca332128d61e3afb75c2ee5950f3339f2a3b5ca8b23e2861224f19ad9b43f21c9184d28b7d9384af5a4fde64fdef479efdb15036db
   languageName: node
   linkType: hard
 
@@ -11391,7 +11374,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "tailwind-nextjs-starter-blog@workspace:."
   dependencies:
+    "@algolia/client-search": ^4.24.0
     "@atlaskit/pragmatic-drag-and-drop": ^1.1.7
+    "@eslint/object-schema": ^2.1.4
     "@lottiefiles/dotlottie-react": ^0.7.0
     "@next/bundle-analyzer": 14.1.0
     "@svgr/webpack": ^8.0.1
@@ -11400,10 +11385,10 @@ __metadata:
     "@tailwindcss/typography": ^0.5.9
     "@types/mdx": ^2.0.5
     "@types/react": ^18.2.14
-    "@types/typed.js": ^2.0.9
     "@typescript-eslint/eslint-plugin": ^6.1.0
     "@typescript-eslint/parser": ^6.1.0
     "@vapi-ai/web": ^1.1.5
+    algoliasearch: ^4.24.0
     autoprefixer: ^10.4.13
     axios: ^1.7.2
     clsx: ^2.1.1
@@ -11414,14 +11399,16 @@ __metadata:
     eslint-config-next: 14.1.0
     eslint-config-prettier: ^8.8.0
     eslint-plugin-prettier: ^5.0.0
-    formidable: ^3.5.1
+    formidable: latest
     framer-motion: ^11.2.12
     github-slugger: ^2.0.0
+    glob: latest
     gray-matter: ^4.0.2
     husky: ^8.0.0
     image-size: 1.0.0
     lint-staged: ^13.0.0
     lottie-react: ^2.4.0
+    lru-cache: ^10.3.0
     lucide-react: ^0.399.0
     next: ^13.5.6
     next-contentlayer: 0.3.4
@@ -11446,7 +11433,9 @@ __metadata:
     remark: ^14.0.2
     remark-gfm: ^3.0.1
     remark-math: ^5.1.1
-    superagent: ^8.1.2
+    rimraf: latest
+    search-insights: ^2.14.0
+    superagent: latest
     tailwind-merge: ^2.3.0
     tailwindcss: ^3.4.1
     typed.js: ^2.1.0
@@ -11734,7 +11723,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typed.js@npm:*, typed.js@npm:^2.1.0":
+"typed.js@npm:^2.1.0":
   version: 2.1.0
   resolution: "typed.js@npm:2.1.0"
   checksum: 688f8a13a2a93317c87bb499f9d4159a0df5e5f67960cddd96a11ae53362b78ab5597d32eb3b300d97ddbe71c1dd5dd817625687ccc8be810643f3922d92b64d
