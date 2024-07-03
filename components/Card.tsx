@@ -3,7 +3,7 @@ import Link from './Link'
 type CardProps = {
   title:string,
   description:string,
-  href:string,
+  href?: string ,
 }
 
 const Card = ({ title, description, href }: CardProps) => (
