@@ -9,7 +9,7 @@ interface ButtonProps {
   disabled?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({ label, className, onClick, isLoading}) => {
+const Button = ({ label, className, onClick, isLoading} : ButtonProps) => {
 
   const Contents = isLoading ? (
     <RiseLoader
