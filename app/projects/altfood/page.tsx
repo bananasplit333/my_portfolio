@@ -7,10 +7,15 @@ import RecipeCardSkeleton from '../../../components/RecipeCardSkeleton';
 import React from 'react';
 import HomeButton from '@/components/HomeButton';
 
+type Ingredient = {
+  ingredient: string;
+  quantity: string;
+  unit: string;
+}
 
 interface RecipeData {
   img_url: string;
-  ingredients: string[];
+  ingredients: Ingredient[];
   directions: string[];
   name: string;
   prepTime: string;
@@ -30,15 +35,14 @@ const RecipeParser: React.FC = () => {
     setIsLoading(true); // Set isLoading to true before the fetch operation
   
     try {
-      const res = await fetch(`${API_URL}?url=${encodeURIComponent(recipeUrl)}`);
-      const data = await res.json();
-  
-      if (data.ingredients && data.cooking_instructions) {
+      const res = await fetch(`${TEST_URL}?url=${encodeURIComponent(recipeUrl)}`);
+      const data = await res.json();  
+      console.log(data)
+      if (data.ingredients && data.cooking_instructions) {  
         const ingredientsArray = data.ingredients;
-        const directionsArray = JSON.parse(data.cooking_instructions)["cooking_instructions"];
-  
+        const directionsArray = data.cooking_instructions;
         setRecipeData({
-          img_url: data.img_url,
+          img_url: data.img_url || '',
           ingredients: ingredientsArray,
           directions: directionsArray,
           name: data.name || '',
@@ -67,51 +71,53 @@ const RecipeParser: React.FC = () => {
   console.log(recipeData)
   return (
     <div>
-      <div className="absolute right-10 top-1/3 m:right-1/4 l:right-1/4 xl:right-1/4 sm:top-1/4">
+      <div className="absolute right-10 top-1/4 m:right-1/4 l:right-1/4 xl:right-1/4 sm:top-1/4">
         <HomeButton />
       </div>
-
-      {recipeData ? (
-        <div className="min-h-screen justify-center flex flex-col">
-        <RecipeCard
-          img_url={recipeData.img_url}
-          name={recipeData.name}
-          prepTime={recipeData.prepTime}
-          cookTime={recipeData.cookTime}
-          recipeYield={recipeData.recipeYield}
-          ingredients={recipeData.ingredients}
-          directions={recipeData.directions}
-        />
-        </div>
-      ) : isLoading ? (
-        <div className="flex flex-col min-h-screen justify-center">
-          <RecipeCardSkeleton />
-        </div>
-      ) : (
-        <div className="flex flex-col min-h-screen justify-center max-w-xl mx-auto p-4">
-          <h1 className="text-2xl font-bold mb-4">Clear away the clutter on any recipe site.</h1>
-          <p className="text-gray-600 mb-4 dark:text-gray-100">
-            Get the instructions without the fluff. No more popups, ads, or life stories.
-          </p>
-          <form className="flex gap-2 mb-4">
-            <input
-              type="url"
-              value={recipeUrl}
-              onChange={(e) => setRecipeUrl(e.target.value)}
-              onClick={gainedFocus}
-              onBlur={lostFocus}
-              placeholder={showPlaceholder ? 'Paste a recipe URL to remove the clutter.' : ''}
-              className="dark:text-black flex-grow border rounded px-2 py-1"
-              required
+      <div className="pt-60">
+        {recipeData ? (
+          <div className="min-h-500 justify-center flex flex-col">
+            <RecipeCard
+              img_url={recipeData.img_url}
+              name={recipeData.name}
+              prepTime={recipeData.prepTime}
+              cookTime={recipeData.cookTime}
+              recipeYield={recipeData.recipeYield}
+              ingredients={recipeData.ingredients}
+              directions={recipeData.directions}
+              onClick={() => {setRecipeData(null)}}
             />
-            <button onClick={handleSubmit} className="bg-blue-500 text-white rounded px-4 py-1">
-              Get recipe
-            </button>
-          </form>
-          {error && <p className="text-red-500 mb-4">{error}</p>}
-        </div>
-        
-      )}
+          </div>
+        ) : isLoading ? (
+          <div className="flex flex-col min-h-screen justify-center">
+            <RecipeCardSkeleton />
+          </div>
+        ) : (
+          <div className="flex flex-col min-h-screen justify-center max-w-xl mx-auto p-4">
+            <h1 className="text-2xl font-bold mb-4">Clear away the clutter on any recipe site.</h1>
+            <p className="text-gray-600 mb-4 dark:text-gray-100">
+              Get the instructions without the fluff. No more popups, ads, or life stories.
+            </p>
+            <form className="flex gap-2 mb-4">
+              <input
+                type="url"
+                value={recipeUrl}
+                onChange={(e) => setRecipeUrl(e.target.value)}
+                onClick={gainedFocus}
+                onBlur={lostFocus}
+                placeholder={showPlaceholder ? 'Paste a recipe URL to remove the clutter.' : ''}
+                className="dark:text-black flex-grow border rounded px-2 py-1"
+                required
+              />
+              <button onClick={handleSubmit} className="bg-blue-500 text-white rounded px-4 py-1">
+                Get recipe
+              </button>
+            </form>
+            {error && <p className="text-red-500 mb-4">{error}</p>}
+          </div>
+          
+        )}
+      </div>
     </div>
 );
 }

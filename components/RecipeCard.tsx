@@ -1,14 +1,23 @@
 import Image from 'next/image'
 import React from 'react';
 
+
+type Ingredient = {
+  ingredient: string;
+  quantity: string;
+  unit: string;
+}
+
+//TODO: move type ingredient into a constants file 
 interface RecipeCardProps {
   img_url: string;
-  ingredients: string[];
+  ingredients: Ingredient[];
   directions: string[];
   name: string;
   prepTime: string;
   cookTime: string;
   recipeYield: string;
+  onClick: () => void;
 }
 
 const RecipeCard: React.FC<RecipeCardProps> = ({
@@ -19,14 +28,23 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
   prepTime,
   cookTime,
   recipeYield,
+  onClick
 }) => {
   return (
-    <div className="flex flex-col justify-center bg-white rounded shadow p-6 dark:bg-zinc-800 w-full max-w-4xl mx-auto">
-      <div className="flex items-center mb-6">
-        <img src={img_url} alt="Recipe Thumbnail" height={120} width={120} className="mr-4 rounded" />
-        <h2 className="text-2xl font-bold">{name}</h2>
+    <div className="flex flex-col justify-center bg-white rounded shadow p-8 dark:bg-zinc-800 w-full max-w-4xl mx-auto">
+      <div className="grid grid-cols-4 mb-6">
+        <div>
+          <img src={img_url} alt="Recipe Thumbnail" height={120} width={120} className="mr-4 rounded" />
+        </div>
+        <div className="col-span-2 text-left">
+          <h2 className="text-2xl font-bold">{name}</h2>
+        </div>
+        <div className="text-right">
+          <a  onClick={onClick}>reset</a>
+        </div>
+       
       </div>
-
+      
       {(prepTime || cookTime || recipeYield) && (
         <div className="grid grid-cols-3 gap-4 mb-6">
           {prepTime && (
@@ -52,7 +70,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
           <h3 className="text-xl font-bold mb-4">Ingredients</h3>
           <ul className="list-disc pl-6">
             {ingredients.map((ingredient, index) => (
-              <li key={index} className="mb-2">{ingredient}</li>
+              <li key={index} className="mb-2">{ingredient.quantity} {ingredient.unit} {ingredient.ingredient}</li>
             ))}
           </ul>
         </div>
