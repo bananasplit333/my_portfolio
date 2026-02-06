@@ -3,34 +3,7 @@ import { writeFileSync } from 'fs'
 import readingTime from 'reading-time'
 import { slug } from 'github-slugger'
 import path from 'path'
-import { VFile } from 'vfile'
 
-// Patch VFile to support getData/setData for mdx/remark plugins expecting it
-// @ts-ignore
-if (typeof VFile.prototype.getData !== 'function') {
-  // @ts-ignore
-  VFile.prototype.getData = function (key?: string) {
-    // @ts-ignore
-    return key ? this.data?.[key] : this.data
-  }
-  // @ts-ignore
-  VFile.prototype.setData = function (key: string, value: any) {
-    // @ts-ignore
-    this.data = this.data || {}
-    // @ts-ignore
-    this.data[key] = value
-    return this
-  }
-}
-// Remark packages
-import remarkGfm from 'remark-gfm'
-import remarkMath from 'remark-math'
-import {
-  remarkExtractFrontmatter,
-  remarkCodeTitles,
-  remarkImgToJsx,
-  extractTocHeadings,
-} from 'pliny/mdx-plugins/index.js'
 // Rehype packages
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
@@ -58,7 +31,7 @@ const computedFields: ComputedFields = {
     type: 'string',
     resolve: (doc) => doc._raw.sourceFilePath,
   },
-  toc: { type: 'string', resolve: (doc) => extractTocHeadings(doc.body.raw) },
+  toc: { type: 'string', resolve: (doc) => doc.body.raw.match(/^#{1,6}\s+.+$/gm) || [] },
 }
 
 /**
@@ -152,17 +125,10 @@ export default makeSource({
   documentTypes: [Blog, Authors],
   mdx: {
     cwd: process.cwd(),
-    remarkPlugins: [
-      remarkExtractFrontmatter,
-      remarkGfm,
-      remarkCodeTitles,
-      remarkMath,
-      remarkImgToJsx,
-    ],
+    remarkPlugins: [],
     rehypePlugins: [
       rehypeSlug,
       rehypeAutolinkHeadings,
-      rehypeKatex,
       [rehypeCitation, { path: path.join(root, 'data') }],
       [rehypePrismPlus, { defaultLanguage: 'js', ignoreMissing: true }],
       rehypePresetMinify,
