@@ -34,13 +34,14 @@ const RecipeCard: React.FC<RecipeCardProps> = ({
     <div className="flex flex-col justify-center bg-white rounded shadow p-8 dark:bg-zinc-800 w-full max-w-4xl mx-auto">
       <div className="grid grid-cols-4 mb-6">
         <div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={img_url} alt="Recipe Thumbnail" height={120} width={120} className="mr-4 rounded" />
         </div>
         <div className="col-span-2 text-left">
           <h2 className="text-2xl font-bold">{name}</h2>
         </div>
         <div className="text-right">
-          <a  onClick={onClick}>reset</a>
+          <button type="button" onClick={onClick} className="text-blue-500 hover:underline">reset</button>
         </div>
        
       </div>
