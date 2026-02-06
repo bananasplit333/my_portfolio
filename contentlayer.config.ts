@@ -126,13 +126,7 @@ export default makeSource({
   mdx: {
     cwd: process.cwd(),
     remarkPlugins: [],
-    rehypePlugins: [
-      rehypeSlug,
-      rehypeAutolinkHeadings,
-      [rehypeCitation, { path: path.join(root, 'data') }],
-      [rehypePrismPlus, { defaultLanguage: 'js', ignoreMissing: true }],
-      rehypePresetMinify,
-    ],
+    rehypePlugins: [],
   },
   onSuccess: async (importData) => {
     try {
